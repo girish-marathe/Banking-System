@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class='row'>
+            <div class='col-md-3 col-lg-3' align='center'> 
+                <img src='images/Uploaded Storage/IMG.jpg' alt='User Pic' class='img-circle img-responsive'>
+            </div>
+            <div class=' col-md-9 col-lg-9 '> 
+                <table class='table table-user-information'>
+                    <tbody><tr><td>Name:</td><td>Krishna</td>
+                        </tr><tr><td>Last Name</td><td>B</td></tr>
+                        <tr><td>Branch Name</td><td>28/08/1994</td></tr>
+                        <tr><td>Date of Birth</td><td>Kothrud</td></tr>
+                        <tr><td>IFSC code</td><td>1658</td></tr>
+                        <tr><td>Account No.</td><td>1658414567158</td></tr>
+                        <tr><td>Gender</td><td>male</td></tr>
+                        <tr><td>Address</td><td>Pune</td></tr>
+                        <tr><td>Contact</td><td>9923743243</td></tr>
+                        <tr><td>Adhar No.</td><td>9923743243</td></tr> 
+                        <tr><td>PAN No.</td><td>9923743243</td></tr>
+                        <tr><td>Status</td><td>deactivate</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function () {
+                                                        //show details of selected document..
+
+                                                        $("[name='view_data']").click(function () {
+                                                            var email_id = $(this).attr("id");
+                                                            $.ajax({
+                                                                url: 'userProfile.jsp',
+                                                                data: {email_id: email_id},
+                                                                type: "post",
+                                                                async: false,
+                                                                success: function (msg) {
+                                                                    $('#user_profile').html(msg);
+                                                                    $('#myModal').modal("show");
+                                                                }
+                                                            });
+                                                        });
+                                                    })
+        </script>
+        
+</html>
